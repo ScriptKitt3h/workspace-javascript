@@ -81,7 +81,15 @@
             <h1> Get textcontent of an element </h1>
             <p>Perform arithmetic operation on <span id="num1"> 4 </span> and <span id="num2">5 </span> </p>
             <p>Result:
-                <script src="js/arith.js"></script>
+                <script>
+                    //access the element
+                    var sE = document.getElementById("num1");
+                    var n = parseInt(sE.textContent);
+                    var m = parseInt(document.getElementById("num2").textContent);
+
+                    var ans = n + m;
+                    document.write("The sum is "+ ans);
+                </script>
             </p>
 
         </div>
