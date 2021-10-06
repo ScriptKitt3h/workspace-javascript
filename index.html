@@ -45,7 +45,7 @@
                 var c = a + b;
                 document.write("c ="+ c);
 
-                
+
             </script>
 
 
@@ -54,7 +54,13 @@
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
             <p> Write an image to the page </p>
+            <script>
+                document.writeln("<img src=\"img/die1.png\">");
+                for (var i=1; i<7; i++){
+                    document.writeln("<img src=\"img/die"+i+".png\">");
+                }
 
+            </script>
 
             <p> Write a table to the page </p>
 
