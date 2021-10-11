@@ -149,6 +149,20 @@
                     </label>
                 </p>
             </form>
+            <script>
+                //EH for this function
+                function welcome(){
+                    console.log("event fired");
+                    var name = document.getElementById("cName").value;
+                    //output 'personalized' welcome message
+                    document.getElementById('message').textContent="Your Paypal has been successfully charged, "+name;
+                }
+
+                //register event with EH
+                var nE = document.getElementById("cName");
+                nE.addEventListener('blur', welcome, false);
+
+            </script>
 
         </div>
 
