@@ -186,6 +186,17 @@
 
             <div id="message">​
             </div>
+            <script>
+                //EH
+                function tryItEditor(){
+                    //get input
+                    var inputCode = document.getElementById('code').value;
+                    //display
+                    document.getElementById('message').innerHTML=inputCode;
+                }
+                //register event with handler
+                document.getElementById("tryit").addEventListener('click',tryItEditor);
+            </script>
 
 
         </div>
