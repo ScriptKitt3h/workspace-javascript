@@ -220,8 +220,27 @@
             </p>
 
             <script type="text/javascript">
+                // EH : change -> getprice
+                function getprice() {
+                    //input
+                    var yearCar = document.getElementById('year').value;
+                    var condCar = document.getElementById('condition').value;
+                    //make decision
+                    if (yearCar == "2003" && condCar == "Fair"){
+                        price = 2000;
+                    }
+                    else if (yearCar == "2003" && condCar == "Good"){
+                        price = 3000;
+                    }
 
+                    //output
+                    document.getElementById('price').textContent=price.toString();
 
+                }
+                
+                // Register event
+                document.getElementById('year').addEventListener('change',getprice,false);
+                document.getElementById('condition').addEventListener('change',getprice,false);
 
             </script>
 
