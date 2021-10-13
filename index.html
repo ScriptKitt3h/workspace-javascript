@@ -251,6 +251,25 @@
             <p> Choose your favorite theme(warm, cool, hot)
                 <input type="text" id="theme">
             </p>
+            <script>
+                // EH blur on cursor leave -> color change
+                function changeColor(){
+                    var theme = document.getElementById('theme').value;
+                    var bcolor = "white";
+                    switch(theme){
+                        case "warm": bcolor = "orange"; break;
+                        case "hot": bcolor = "red"; break;
+                        case "cool": bcolor = "blue"; break;
+                        default: bcolor = "white";
+                    }
+                    document.body.setAttribute("style","background-color:"+bcolor);
+
+                }
+
+                //register event
+                document.getElementById('theme').addEventListener('blur',changeColor,false);
+
+            </script>
 
         </div>
 
