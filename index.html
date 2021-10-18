@@ -305,25 +305,61 @@
             <script>
                 function getpremium(){
                     //acquire radio button value(s)
-                    document.querySelector('input[type="coverage"]'])
+                    var coverage = document.querySelector('input[type="coverage"]').value;
+
+                // get the value of the selection box
+                var e2 = document.getElementById("agegroup").selectedIndex;
+                console.log("the index is "+ e2);
+
+                // make decision:
+                var agefactor = 0;
+                switch(e2){
+                    case 0: agefactor = 0.08;break;
+                    case 1: agefactor = 0.09;break;
+                    case 2: agefactor = 0.11;break;
+                    case 3: agefactor = 0.17;break;
+                    case 4: agefactor = 0.29;break;
+                    case 5: agefactor = 0.48;break;
+                    case 6: agefactor = 0.75;break;
+                    case 7: agefactor = 1.17;break;
+                }
+
+                // calc insurance premium
+                var premium = ((10+agefactor)*(coverage/1000));
                 }
 
                 document.getElementById('pbutton').addEventListener('click',getpremium,false);
-
+                
             </script>
 
         </div>
 
 
-
-
         <div class="practice">
             <h1>For Loop Practice 1 </h1>
             <p> Display the square of numer 1... N </p>
-            <p> N = <input type="number" min="1" max="10" id="inputnumber1"> </p>
+            <p> N = <input type="number" min="1" max="10" id="inputNumber1"> </p>
             <p>
-                <input type="button" value="Click for Square">
+                <input id='csquare' type="button" value="Click for Square">
             </p>
+            <p id="resultsquare">
+
+            </p>
+            <script>
+                // bind event
+                document.querySelector('#csquare').addEventListener('click',dosquare);
+                var result = "";
+                // eventhandler
+                function dosquare(){
+                    var N = parseInt(document.getElementById('inputNumber1').value);
+                    for(var i=1; i<=N; i++){
+                        var isquare = i*i;
+                        result += "<h2> "+ isquare+"<h1>";
+                    }
+                    document.getElementById('resultsquare').innerHTML=result;
+                }
+
+            </script>
 
         </div>
 
