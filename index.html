@@ -402,7 +402,7 @@
         <div class="practice">
             <h1>Change Attribute -- Rolling a dice </h1>
             <p> <input type="button" id="roll" value="roll" /> </p>
-            <p> <img src="img/die1.png"> </p>
+            <p> <img id="dieImg" src="img/die1.png"> </p>
             <table>
                 <tr>
                     <th>Result</th>
@@ -423,6 +423,21 @@
                     <td id="r6"></td>
                 </tr>
             </table>
+            <script>
+                // button click
+                document.getElementById("roll").addEventListener('click', rollDice);
+                // eventhandler - rolling dice
+                var stats = [0,0,0,0,0,0];
+                function rollDice(){
+                    console.log('function works')
+                    var e1 = document.getElementById("dieImg");
+                    var n = Math.floor(Math.random()*6)+1;
+                    e1.setAttribute("src", "img/die"+n+".png");
+                    stats[n-1]++;
+                    // display the number/result in the proper location
+                    document.getElementById("r"+n).textContent=stats[n-1];
+                }
+            </script>
 
         </div>
 
