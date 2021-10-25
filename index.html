@@ -460,6 +460,21 @@
                 <img src="img/usca5.jpg" alt="usca">
             </div>
 
+            <script>
+                var index = 0; // index of image
+                var imglist = document.querySelectorAll('.img-container-hide');
+                //start animations
+                setInterval(changepic,3000);
+                function changepic(){
+                    imglist[index].setAttribute('class','.img-container-hide');
+                    index++;
+                    index = index % 5;
+                    imglist[index].setAttribute('class','.img-container');
+
+                }
+
+            </script>
+
         </div>
 
 
