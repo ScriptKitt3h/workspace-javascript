@@ -3,7 +3,16 @@ function changeStyle(e){
     // this ---> represents the element
     // e ---> event trigger
     e.preventDefault();
-    this.setAttribute('class',"answer selected");
+    // if the class is answer, change to answer selected
+    // else change back to answer
+    var current = this.getAttribute('class');
+    if (current == "answer"){
+        this.setAttribute('class', "answer selected");
+    }
+    else{
+        this.setAttribute('class', "answer");
+    }
+    //this.setAttribute('class',"answer selected");
     
 }
 
