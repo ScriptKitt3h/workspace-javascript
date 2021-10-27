@@ -12,7 +12,10 @@
     $(document).ready(function(){
         $('body').hide().fadeIn(3000);
         $('img').hide();
-        $('h1').hide().fadeIn(2500);
+        $('h1').mouseover(function(){
+            $(this).slideUp();
+            
+        });
     });
 </script>
 
